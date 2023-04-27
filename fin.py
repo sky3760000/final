@@ -1,6 +1,7 @@
 from inspect import ArgInfo
 from sys import displayhook
-from tkinter.tix import DisplayStyle
+from tkinter.ttk import Style
+
 from turtle import color, left
 from fastapi import BackgroundTasks, FastAPI, Form
 from fastapi.responses import HTMLResponse
