@@ -118,16 +118,17 @@ def detect_objects(frame):
 # Define function to capture video from webcam and display on webpage
 def webcam_feed():
     # Initialize video capture object
-    cap = cv2.VideoCapture(0)
+    cap = VideoCapture(0)
+
+    # Check if video capture object was successfully initialized
+    if not cap.isOpened():
+        print("Error: Could not open camera.")
+        return
 
     # Loop over each frame from video capture object
     while True:
         # Read frame from video capture object
         ret, frame = cap.read()
-
-        # Check if frame is valid
-        if not ret:
-            continue
 
         # Detect objects and calculate social distance violations in frame
         frame = detect_objects(frame)
