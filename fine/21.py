@@ -8,7 +8,7 @@ from flask import Flask, render_template, Response
 app = Flask(__name__)
 
 # Load YOLOv3 model and COCO class labels
-net = cv2.dnn.readNet("yolo-coco/yolov3.weights", "yolo-coco/yolov3.cfg")
+net = cv2.dnn.readNet("yolo-coco/yolov3.weights.1", "yolo-coco/yolov3.cfg")
 classes = []
 with open("yolo-coco/coco.names", "r") as f:
     classes = [line.strip() for line in f.readlines()]
