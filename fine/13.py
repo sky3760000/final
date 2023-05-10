@@ -3,6 +3,7 @@ import cv2
 import numpy as np
 import time
 from flask import Flask, render_template, Response
+from cv2 import VideoCapture
 
 # Initialize Flask app
 app = Flask(__name__)
