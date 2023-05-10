@@ -3,7 +3,6 @@ import cv2
 import numpy as np
 import time
 from flask import Flask, render_template, Response
-from cv2 import VideoCapture
 
 # Initialize Flask app
 app = Flask(__name__)
@@ -119,7 +118,7 @@ def detect_objects(frame):
 # Define function to capture video from webcam and display on webpage
 def webcam_feed():
     # Initialize video capture object
-    cap = VideoCapture(0)
+    cap = cv2.VideoCapture(0)
 
     # Check if video capture object was successfully initialized
     if not cap.isOpened():

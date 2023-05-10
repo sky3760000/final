@@ -1,10 +1,26 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Real-time Social Distance Violation Detection</title>
+    <title>Social Distance Detector</title>
   </head>
   <body>
-    <h1>Real-time Social Distance Violation Detection</h1>
-    <img src="{{ url_for('video_feed') }}" width="640" height="480">
+    <h1>Social Distance Detector</h1>
+    <div>
+      <img id="video_feed" src="{{ url_for('video_feed') }}">
+    </div>
+    <script>
+      // Get video feed element
+      const video = document.getElementById('video_feed');
+
+      // Prompt user for camera access
+      navigator.mediaDevices.getUserMedia({ video: true })
+        .then(stream => {
+          // Set video feed source to camera stream
+          video.srcObject = stream;
+        })
+        .catch(error => {
+          console.error('Error accessing camera:', error);
+        });
+    </script>
   </body>
 </html>
