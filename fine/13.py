@@ -118,7 +118,7 @@ def detect_objects(frame):
 # Define function to capture video from webcam and display on webpage
 def webcam_feed():
     # Initialize video capture object
-    cap = cv2.VideoCapture(-1)
+    cap = cv2.VideoCapture(0)
 
     # Loop over each frame from video capture object
     while True:
